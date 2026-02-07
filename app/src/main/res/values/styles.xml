@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Material3.Button.OutlinedButton.Danger" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/purple_700</item> <item name="strokeColor">@color/purple_700</item>
+    </style>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_stroke_width_selected">2dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_extra_small">8dp</dimen>
+    <dimen name="text_size_large_title">20sp</dimen>
+    <dimen name="text_size_medium_title">18sp</dimen>
+    <dimen name="text_size_body_bold">16sp</dimen>
+    <dimen name="text_size_body_regular">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_elevation_elevated">4dp</dimen>
+</resources>

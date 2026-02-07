@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_reportes"
+        android:icon="@drawable/account_balance_wallet_24px"
+        android:title="Reporte de pagos" />
+    <item
+        android:id="@+id/action_gestionar_usuarios"
+        android:icon="@drawable/groups_24px"
+        android:title="Administrar usuarios" />
+    <item
+        android:id="@+id/action_gestionar_productos"
+        android:icon="@drawable/box_24px"
+        android:title="Administrar productos" />
+</menu>

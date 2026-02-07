@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pedrox.controlpagos.LoginFragment"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_loginFragment_to_clientesFragment"
+            app:destination="@id/clientesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/clientesFragment"
+        android:name="com.pedrox.controlpagos.ClientesFragment"
+        android:label="Clientes">
+        <action
+            android:id="@+id/action_clientesFragment_to_detalleClienteFragment"
+            app:destination="@id/detalleClienteFragment">
+            <argument
+                android:name="cliente"
+                app:argType="com.pedrox.controlpagos.models.Cliente" />
+        </action>
+    </fragment>
+    <fragment
+    android:id="@+id/detalleClienteFragment"
+    android:name="com.pedrox.controlpagos.DetalleClienteFragment"
+    android:label="Detalle del Cliente">
+    <argument
+        android:name="cliente"
+        app:argType="com.pedrox.controlpagos.models.Cliente" />
+        <action
+            android:id="@+id/action_detalleClienteFragment_to_detallePedidoFragment"
+            app:destination="@id/detallePedidoFragment">
+            <argument
+                android:name="pedido"
+                app:argType="com.pedrox.controlpagos.models.Pedido" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detallePedidoFragment"
+        android:name="com.pedrox.controlpagos.DetallePedidoFragment"
+        android:label="Detalle del Pedido">
+        <argument
+            android:name="pedido"
+            app:argType="com.pedrox.controlpagos.models.Pedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportePagosFragment"
+        android:name="com.pedrox.controlpagos.ReportePagosFragment"
+        android:label="Reporte de Pagos">
+
+        <argument
+            android:name="inicio"
+            app:argType="string" />
+
+        <argument
+            android:name="fin"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/usuariosFragment"
+        android:name="com.pedrox.controlpagos.UsuariosFragment"
+        android:label="Administrar Usuarios">
+    </fragment>
+    <fragment
+        android:id="@+id/productosFragment"
+        android:name="com.pedrox.controlpagos.ProductosFragment"
+        android:label="Administrar Productos">
+    </fragment>
+</navigation>
