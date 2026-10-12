@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="8dp"
+    android:padding="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -11,38 +11,43 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:text=""/>
+        android:textColor="?attr/colorOnSurface"
+        android:text="" />
 
     <TextView
         android:id="@+id/tvEstadoProducto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.7"
+        android:textColor="?attr/colorOnSurfaceVariant"
         android:text="" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.75"
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditarProducto"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:id="@+id/btnEditarProducto"
+            android:contentDescription="Editar"
+            app:cornerRadius="4dp"
             app:icon="@drawable/edit_24px"
-            app:iconTint="@android:color/black"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+            app:iconTint="@color/colorInfo"
+            app:backgroundTint="#BCDBF4"
+            app:iconSize="21dp" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_marginStart="4dp"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:id="@+id/btnEliminarProducto"
             app:icon="@drawable/easy_http_ic_delete"
-            app:iconTint="@android:color/black"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+            app:iconTint="@color/colorDanger"
+            android:backgroundTint="@android:color/white" />
     </LinearLayout>
 
 </LinearLayout>

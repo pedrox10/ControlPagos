@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Cliente — color cambia a rojo si es moroso (desde el adapter) -->
+    <TextView
+        android:id="@+id/tvCarteraNombre"
+        android:layout_width="0dp"
+        android:layout_weight="1.8"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvCarteraGrupo"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvCarteraPedidos"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvCarteraSaldo"
+        android:layout_width="0dp"
+        android:layout_weight="0.9"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="@color/colorDanger"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+
+</LinearLayout>

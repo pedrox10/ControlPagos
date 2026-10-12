@@ -1,11 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ControlPagos</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--
+        Sectores de cobro — array fijo.
+        MOROSOS fue eliminado: ya no es un sector sino un estado del cliente (campo esMoroso).
+        El filtro de morosos se maneja en el segundo nivel de chips de la lista.
+    -->
     <string-array name="grupos_array">
         <item>PAMPA</item>
         <item>REPÚBLICA</item>
+        <item>MOROSOS</item>
     </string-array>
+
     <string-array name="roles_array">
         <item>Admin</item>
         <item>Cobrador</item>

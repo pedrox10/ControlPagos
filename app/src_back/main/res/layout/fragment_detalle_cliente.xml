@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalleClienteFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClienteInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation_elevated"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundCard">
+
+            <!-- Fila: info + botones editar/eliminar -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="@dimen/padding_default">
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_large_title"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        tools:text="Ana García" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Venta de fruta" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteTelefono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Teléfono: 70010020" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteGrupo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Grupo: PAMPA" />
+                </LinearLayout>
+
+                <!-- Botones editar / eliminar -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="4dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:id="@+id/btnEditar"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="Editar"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/edit_24px"
+                        app:iconTint="@color/colorInfo"
+                        app:backgroundTint="#BCDBF4"
+                        app:iconSize="21dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:id="@+id/btnEliminar"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="Eliminar"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/easy_http_ic_delete"
+                        app:iconTint="@color/colorDanger"
+                        app:backgroundTint="#F8D1D8"
+                        app:iconSize="21dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NUEVO: Toggle moroso — Opción B
+                 Visible para todos (Admin y Cobrador pueden marcar morosos).
+                 Si quieres restringirlo solo a Admin, contrólalo en el Fragment. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/padding_default"
+                android:paddingEnd="@dimen/padding_default"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Marcar como moroso"
+                    android:textSize="@dimen/text_size_body_regular"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <!-- SwitchMaterial — se activa/desactiva con un tap -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchMoroso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Marcar cliente como moroso" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Encabezado pedidos + botón agregar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPedidosDelCliente"
+        app:layout_constraintTop_toBottomOf="@id/cardClienteInfo"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Pedidos del Cliente"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size_medium_title"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/btnAddPedido"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/margin_default"
+            app:cornerRadius="4dp"
+            app:icon="@drawable/add_24px"
+            app:iconTint="?attr/colorOnSurface"
+            app:backgroundTint="#D2B7F3"
+            app:iconSize="21dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPedidos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPedidosDelCliente"
+        tools:listitem="@layout/item_pedido" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBarPedidos"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorSize="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:indicatorInset="8dp"
+        app:trackThickness="4dp"
+        app:indicatorColor="?attr/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,35 +3,44 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
 
     <TextView
         android:id="@+id/tvFecha"
         android:layout_width="0dp"
         android:layout_weight="0.9"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnSurface" />
 
     <TextView
         android:id="@+id/tvCliente"
         android:layout_width="0dp"
         android:layout_weight="1.65"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnSurface" />
 
     <TextView
         android:id="@+id/tvMonto"
         android:layout_width="0dp"
         android:layout_weight="0.5"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:gravity="end"
+        android:textSize="12sp"
+        android:textColor="@color/colorSuccess"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvCobrador"
         android:layout_width="0dp"
         android:layout_weight="0.85"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
 </LinearLayout>

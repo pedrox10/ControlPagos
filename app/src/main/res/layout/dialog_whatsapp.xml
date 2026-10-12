@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <!-- Vista previa del mensaje -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar mensaje antes de enviar"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="13sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Burbuja estilo WhatsApp -->
+
+    <!-- Campo editable -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMensajeWA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:maxLines="6"
+            android:gravity="top" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón enviar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnviarWA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Enviar mensaje"
+        app:icon="@drawable/ic_whatsapp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="#25D366" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLlamarWA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Llamar"
+        app:icon="@drawable/ic_whatsapp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/colorPrimary" />
+
+</LinearLayout>

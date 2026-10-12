@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo normal de la fila -->
+    <item>
+        <color android:color="@android:color/transparent" />
+    </item>
+    <!-- Borde izquierdo rojo de 3dp -->
+    <item android:right="9999dp">
+        <color android:color="@color/colorDanger" />
+    </item>
+    <item android:left="3dp">
+        <color android:color="@android:color/transparent" />
+    </item>
+</layer-list>

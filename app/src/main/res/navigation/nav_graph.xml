@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.pedrox.controlpagos.LoginFragment"
-        android:label="Login" >
+        android:label="Login">
         <action
             android:id="@+id/action_loginFragment_to_clientesFragment"
             app:destination="@id/clientesFragment" />
@@ -25,13 +25,14 @@
                 app:argType="com.pedrox.controlpagos.models.Cliente" />
         </action>
     </fragment>
+
     <fragment
-    android:id="@+id/detalleClienteFragment"
-    android:name="com.pedrox.controlpagos.DetalleClienteFragment"
-    android:label="Detalle del Cliente">
-    <argument
-        android:name="cliente"
-        app:argType="com.pedrox.controlpagos.models.Cliente" />
+        android:id="@+id/detalleClienteFragment"
+        android:name="com.pedrox.controlpagos.DetalleClienteFragment"
+        android:label="Detalle del Cliente">
+        <argument
+            android:name="cliente"
+            app:argType="com.pedrox.controlpagos.models.Cliente" />
         <action
             android:id="@+id/action_detalleClienteFragment_to_detallePedidoFragment"
             app:destination="@id/detallePedidoFragment">
@@ -40,6 +41,7 @@
                 app:argType="com.pedrox.controlpagos.models.Pedido" />
         </action>
     </fragment>
+
     <fragment
         android:id="@+id/detallePedidoFragment"
         android:name="com.pedrox.controlpagos.DetallePedidoFragment"
@@ -48,28 +50,46 @@
             android:name="pedido"
             app:argType="com.pedrox.controlpagos.models.Pedido" />
     </fragment>
+
     <fragment
         android:id="@+id/reportePagosFragment"
         android:name="com.pedrox.controlpagos.ReportePagosFragment"
         android:label="Reporte de Pagos">
-
-        <argument
-            android:name="inicio"
-            app:argType="string" />
-
-        <argument
-            android:name="fin"
-            app:argType="string" />
-
+        <argument android:name="inicio" app:argType="string" />
+        <argument android:name="fin"    app:argType="string" />
     </fragment>
+
     <fragment
         android:id="@+id/usuariosFragment"
         android:name="com.pedrox.controlpagos.UsuariosFragment"
-        android:label="Administrar Usuarios">
-    </fragment>
+        android:label="Administrar Usuarios" />
+
+    <fragment
+        android:id="@+id/clientesArchivadosFragment"
+        android:name="com.pedrox.controlpagos.ClientesArchivadosFragment"
+        android:label="Clientes Archivados" />
+
     <fragment
         android:id="@+id/productosFragment"
         android:name="com.pedrox.controlpagos.ProductosFragment"
-        android:label="Administrar Productos">
+        android:label="Administrar Productos" />
+
+    <!-- NUEVOS -->
+    <fragment
+        android:id="@+id/carteraVivaFragment"
+        android:name="com.pedrox.controlpagos.CarteraVivaFragment"
+        android:label="Cartera Viva" />
+
+    <fragment
+        android:id="@+id/sectoresFragment"
+        android:name="com.pedrox.controlpagos.SectoresFragment"
+        android:label="Gestionar Sectores" />
+    <fragment
+        android:id="@+id/reporteProductosFragment"
+        android:name="com.pedrox.controlpagos.ReporteProductosFragment"
+        android:label="Productos entregados">
+        <argument android:name="inicio" app:argType="string" />
+        <argument android:name="fin"    app:argType="string" />
     </fragment>
+
 </navigation>

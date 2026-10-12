@@ -6,54 +6,109 @@
     android:layout_height="match_parent"
     android:padding="12dp">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Título -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp">
+        android:text="REPORTE DE PAGOS"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_large_title"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="4dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="REPORTE DE PAGOS"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:textSize="@dimen/text_size_large_title"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp"
-            />
-        <TextView
-            android:id="@+id/tvRangoFechas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/black"
-            android:paddingBottom="4dp"/>
-        <TextView
-            android:id="@+id/tvTotalGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total General: 0 Bs"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:paddingBottom="4dp"/>
+    <!-- Rango de fechas -->
+    <TextView
+        android:id="@+id/tvRangoFechas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginBottom="10dp" />
 
-        <!-- LISTA DE TOTALES POR COBRADOR -->
+    <!-- Card de resumen — total + cobradores -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard">
+
         <LinearLayout
-            android:id="@+id/layoutTotalesCobradores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="4dp"/>
-    </LinearLayout>
+            android:padding="14dp">
 
-    <!-- Encabezado de tabla -->
+            <!-- Fila: total + ícono tendencia -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total general"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tvTotalGeneral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bs 0"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/trending_up_24px"
+                    android:contentDescription="Tendencia"
+                    app:tint="@color/colorSuccess" />
+
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="?attr/colorOutline"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Totales por cobrador — se llena dinámicamente -->
+            <LinearLayout
+                android:id="@+id/layoutTotalesCobradores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Header de tabla -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#C6CEFD"
-        android:padding="8dp"
+        android:background="@color/colorHeaderTabla"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
         android:orientation="horizontal">
 
         <TextView
@@ -61,36 +116,76 @@
             android:layout_weight="0.9"
             android:layout_height="wrap_content"
             android:text="Fecha"
-            android:textStyle="bold" />
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorHeaderTablaTexto" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1.65"
             android:layout_height="wrap_content"
             android:text="Cliente"
-            android:textStyle="bold" />
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorHeaderTablaTexto" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:text="Monto"
-            android:textStyle="bold" />
+            android:textSize="12sp"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textColor="@color/colorHeaderTablaTexto" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.85"
             android:layout_height="wrap_content"
             android:text="Cobrador"
+            android:textSize="12sp"
             android:gravity="center"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorHeaderTablaTexto" />
     </LinearLayout>
 
-    <!-- Lista -->
+    <!-- Lista de pagos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReportePagos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
+
+    <!-- Total al pie -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHeaderTabla"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="TOTAL"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorHeaderTablaTexto" />
+
+        <TextView
+            android:id="@+id/tvTotalPie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bs 0"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSuccess" />
+
+    </LinearLayout>
 
 </LinearLayout>

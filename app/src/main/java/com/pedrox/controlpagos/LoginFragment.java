@@ -1,7 +1,6 @@
 package com.pedrox.controlpagos;
 
-import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
-
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +16,7 @@ import androidx.navigation.Navigation;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.jimmyworks.easyhttp.EasyHttp;
+import com.jimmyworks.easyhttp.builder.BodyRequestBuilder;
 import com.jimmyworks.easyhttp.exception.HttpException;
 import com.jimmyworks.easyhttp.listener.JsonResponseListener;
 import com.pedrox.controlpagos.models.Usuario;
@@ -71,6 +71,9 @@ public class LoginFragment extends Fragment {
 
     private void authenticateUser(String alias, String clave, View view) {
         btnLogin.setEnabled(false);
+        // Guardar contexto ANTES de entrar al callback asíncrono
+        Context ctx = getContext();
+        if (ctx == null) return; // fragment no adjunto, no hacer nada
         JSONObject obj = new JSONObject();
         try {
             obj.put("alias", alias);
@@ -78,26 +81,29 @@ public class LoginFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        EasyHttp.post(getContext(), Constants.API_BASE_URL + "auth")
-                .stringBody("application/json; charset=utf-8", obj.toString())
+
+        BodyRequestBuilder builder = EasyHttp.post(ctx, Constants.API_BASE_URL + "auth");
+        builder.getOkHttpClientBuilder()
+                .addInterceptor(HttpClient.interceptor(ctx));
+        builder.stringBody("application/json; charset=utf-8", obj.toString())
                 .build()
                 .getJsonAsObject(UsuarioRespuesta.class, new JsonResponseListener<UsuarioRespuesta>() {
                     @Override
                     public void onSuccess(@NonNull Headers headers, @NonNull UsuarioRespuesta respuesta) {
                         if (respuesta.isError()) {
-                            Toast.makeText(getContext(), respuesta.getMensaje(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ctx, respuesta.getMensaje(), Toast.LENGTH_SHORT).show();
                         } else {
-                            Usuario usuario = respuesta.getData();
-                            AppSession.setUsuarioActual(usuario);
-                            Log.d(TAG, "onSuccess: " + usuario.toString());
-                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_clientesFragment);
+                            System.out.println("loginnn");
+                            AppSession.guardar(ctx, respuesta.getData());
+                            Navigation.findNavController(view)
+                                    .navigate(R.id.action_loginFragment_to_clientesFragment);
                         }
                         btnLogin.setEnabled(true);
                     }
                     @Override
                     public void onError(@NonNull HttpException e) {
-                        Toast.makeText(getContext(), "Error de red o servidor", Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "onError: " + e.getMessage());
+                        System.out.println(e);
+                        Toast.makeText(ctx, "Error de red o servidor", Toast.LENGTH_SHORT).show();
                         btnLogin.setEnabled(true);
                     }
                 });

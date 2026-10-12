@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ClientesFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <!-- Barra de búsqueda -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,11 +41,10 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Menú administrador"
+                    android:contentDescription="Refrescar"
                     android:padding="8dp"
                     android:src="@drawable/refresh_24px"
-                    app:tint="@color/black" />
-                <!-- Icono de menú (solo visible para admin) -->
+                    app:tint="?attr/colorOnSurface" />
                 <ImageButton
                     android:id="@+id/btnMenuAdmin"
                     android:layout_width="48dp"
@@ -51,51 +53,100 @@
                     android:contentDescription="Menú administrador"
                     android:padding="8dp"
                     android:src="@drawable/menu_24px"
-                    app:tint="@color/black" />
+                    app:tint="?attr/colorOnSurface" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Nivel 1: Sectores (dinámicos) -->
         <HorizontalScrollView
+            android:id="@+id/scrollViewZonas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:scrollbars="none">
-
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/toggleButtonGroupZonas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:selectionRequired="true"
                 app:singleSelection="true">
-
-                <Button
-                    android:id="@+id/btnGroupTodos"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TODOS"
-                    android:textSize="@dimen/text_size_body_regular" />
-                />
-
-                <Button
-                    android:id="@+id/btnGroupLaPampa"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PAMPA"
-                    android:textSize="@dimen/text_size_body_regular" />
-
-                <Button
-                    android:id="@+id/btnGroupFidelAnze"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="REPÚBLICA"
-                    android:textSize="@dimen/text_size_body_regular" />
             </com.google.android.material.button.MaterialButtonToggleGroup>
         </HorizontalScrollView>
+
+        <!-- Nivel 2: Estado (fijo: Todos / Pendientes hoy / Morosos) -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            android:scrollbars="none">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEstadoTodos"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Todos"
+                    android:checked="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEstadoPendientes"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏳ Pendientes hoy" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEstadoMorosos"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠ Morosos" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+        <!-- Contador — entre chipGroupEstado y rvClientes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clientes encontrados"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipContadorClientes"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:text="0"
+                android:textSize="12sp"
+                android:clickable="false"
+                android:focusable="false"
+                android:textColor="@color/colorInfo"
+                app:chipBackgroundColor="#E2EEF8" />
+        </LinearLayout>
+
+        <!-- Lista -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvClientes"
             tools:listitem="@layout/item_cliente"
@@ -105,8 +156,9 @@
             android:paddingStart="@dimen/padding_small"
             android:paddingEnd="@dimen/padding_small"
             android:paddingBottom="32dp"
-            />
+            android:clipToPadding="false" />
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddCliente"
         tools:ignore="ContentDescription"
@@ -120,11 +172,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
+
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressBarClientes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         android:indeterminate="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,4 +187,5 @@
         app:trackThickness="4dp"
         app:indicatorInset="8dp"
         app:indicatorColor="@color/colorPrimary" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

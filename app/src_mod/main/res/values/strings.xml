@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ControlPagos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="grupos_array">
+        <item>PAMPA</item>
+        <item>REPÚBLICA</item>
+        <item>MOROSOS</item>
+    </string-array>
+    <string-array name="roles_array">
+        <item>Admin</item>
+        <item>Cobrador</item>
+    </string-array>
+</resources>

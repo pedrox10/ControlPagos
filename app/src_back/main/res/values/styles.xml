@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Material3.Button.OutlinedButton.Danger" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/purple_700</item> <item name="strokeColor">@color/purple_700</item>
+    </style>
+    <style name="MyOutlinedToggleButton"
+        parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/mtrl_btn_padding_right</item>
+        <item name="backgroundTint">@color/purple_200</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

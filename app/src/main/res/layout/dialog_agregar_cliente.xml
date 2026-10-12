@@ -45,7 +45,6 @@
             android:id="@+id/spGrupo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:entries="@array/grupos_array"/>
+            android:layout_marginLeft="4dp" />
     </LinearLayout>
 </LinearLayout>

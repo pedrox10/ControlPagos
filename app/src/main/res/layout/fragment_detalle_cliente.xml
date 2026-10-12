@@ -17,90 +17,158 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBackgroundCard">
+
+            <!-- Fila: info + botones editar/eliminar -->
             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="@dimen/padding_default">
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_large_title"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        tools:text="Ana García" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Venta de fruta" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteTelefono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Teléfono: 70010020" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleClienteGrupo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extra_small"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Grupo: PAMPA" />
+                </LinearLayout>
+
+                <!-- Botones editar / eliminar -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="4dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:id="@+id/btnEditar"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="Editar"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/edit_24px"
+                        app:iconTint="@color/colorInfo"
+                        app:backgroundTint="#BCDBF4"
+                        app:iconSize="21dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:id="@+id/btnEliminar"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="Eliminar"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/easy_http_ic_delete"
+                        app:iconTint="@color/colorDanger"
+                        app:backgroundTint="#F8D1D8"
+                        app:iconSize="21dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NUEVO: Toggle moroso — Opción B
+                 Visible para todos (Admin y Cobrador pueden marcar morosos).
+                 Si quieres restringirlo solo a Admin, contrólalo en el Fragment. -->
+            <LinearLayout
+                android:id="@+id/layoutSwitchesAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:padding="@dimen/padding_default">
-                <TextView
-                    android:id="@+id/tvDetalleClienteNombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_large_title"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    tools:text="Ana García" />
-                <TextView
-                    android:id="@+id/tvDetalleClienteDireccion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extra_small"
-                    android:textSize="@dimen/text_size_body_regular"
-                    android:textColor="@color/material_on_surface_variant"
-                    tools:text="Referencia: Venta de fruta" />
-                <TextView
-                    android:id="@+id/tvDetalleClienteTelefono"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extra_small"
-                    android:textSize="@dimen/text_size_body_regular"
-                    android:textColor="@color/material_on_surface_variant"
-                    tools:text="Teléfono: 70010020" />
-                <TextView
-                    android:id="@+id/tvDetalleClienteGrupo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extra_small"
-                    android:textSize="@dimen/text_size_body_regular"
-                    android:textColor="@color/material_on_surface_variant"
-                    tools:text="Grupo: La Pampa" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginEnd="4dp"
-                android:orientation="vertical">
-                <com.google.android.material.button.MaterialButton
-                    style="@style/Widget.MaterialComponents.Button.Icon"
-                    android:id="@+id/btnEditar"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:contentDescription="Editar"
-                    app:cornerRadius="4dp"
-                    app:icon="@drawable/edit_24px"
-                    app:iconTint="@android:color/black"
-                    app:backgroundTint="#BCDBF4"
-                    app:iconSize="21dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/padding_default"
+                android:paddingEnd="4dp"
+                android:paddingBottom="10dp">
 
-                <!-- Botón Eliminar -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingEnd="@dimen/padding_default"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marcar como moroso"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/text_size_body_regular"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <!-- SwitchMaterial — se activa/desactiva con un tap -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchMoroso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Marcar cliente como moroso" />
+
+                </LinearLayout>
+
                 <com.google.android.material.button.MaterialButton
                     style="@style/Widget.MaterialComponents.Button.Icon"
-                    android:id="@+id/btnEliminar"
+                    android:id="@+id/btnArchivar"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:contentDescription="Eliminar"
                     app:cornerRadius="4dp"
-                    app:icon="@drawable/easy_http_ic_delete"
-                    app:iconTint="@android:color/black"
-                    app:backgroundTint="#F8D1D8"
-                    app:iconSize="21dp"/>
+                    app:icon="@drawable/archive_24px"
+                    app:iconTint="@color/colorOnSurface"
+                    app:backgroundTint="#BAB7B8"
+                    app:iconSize="21dp" />
             </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Encabezado pedidos + botón agregar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvPedidosDelCliente"
         app:layout_constraintTop_toBottomOf="@id/cardClienteInfo"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -108,10 +176,10 @@
             android:layout_weight="1"
             android:textSize="@dimen/text_size_medium_title"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnSurface"
             android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_default"
-            />
+            android:layout_marginTop="@dimen/margin_default" />
+
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:id="@+id/btnAddPedido"
@@ -121,10 +189,9 @@
             android:layout_marginEnd="@dimen/margin_default"
             app:cornerRadius="4dp"
             app:icon="@drawable/add_24px"
-            app:iconTint="@android:color/black"
+            app:iconTint="?attr/colorOnSurface"
             app:backgroundTint="#D2B7F3"
-            app:iconSize="21dp"/>
-
+            app:iconSize="21dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -135,7 +202,7 @@
         android:layout_marginEnd="@dimen/margin_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPedidosDelCliente"
         app:layout_constraintVertical_bias="0.0"

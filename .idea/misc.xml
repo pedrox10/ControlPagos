@@ -7,6 +7,7 @@
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1205" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/account_balance_wallet_24px.xml" value="0.1" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/add_24px.xml" value="0.1315" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/archive_24px.xml" value="0.158" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/box_24px.xml" value="0.1" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/divider_1px.xml" value="0.189" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/edit_24px.xml" value="0.2305" />
@@ -18,6 +19,9 @@
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/price_check_24px.xml" value="0.2545" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/refresh_24px.xml" value="0.1" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/stam_red.xml" value="0.2125" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/stamp_green.xml" value="0.13" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/stamp_red.xml" value="0.13" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/drawable/trending_up_24px.xml" value="0.13" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/activity_main.xml" value="0.21818181061547676" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_accion_producto.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_accion_usuario.xml" value="0.2942708333333333" />
@@ -26,15 +30,20 @@
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_pago.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_pedido_detail.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_producto_pedido.xml" value="0.4363636212309535" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/dialog_whatsapp.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_admin_productos.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_admin_usuarios.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_cartera_viva.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_clientes_archivados.xml" value="0.2264151024877837" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_detalle_cliente.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_detalle_pedido.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_detallepedido.xml" value="0.1421875" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_lista.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_lista_clientes.xml" value="0.2879999900124293" />
-        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_login.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_reporte_pagos.xml" value="0.290625" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/fragment_sectores.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_cartera_cliente.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_cliente.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_pago.xml" value="0.28974358974358977" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_payment_row.xml" value="0.333984375" />
@@ -43,11 +52,14 @@
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_producto.xml" value="0.28974358974358977" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_producto_pedido.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_reporte_pago.xml" value="0.2879999900124293" />
+        <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_sector.xml" value="0.2879999900124293" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/layout/item_usuario.xml" value="0.4363636212309535" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/menu/menu_admin.xml" value="0.21818181061547676" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1315" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1315" />
         <entry key="..\:/Users/pedrox10/AndroidStudioProjects/ControlPagos/app/src/main/res/xml/network_security_config.xml" value="0.1" />
+        <entry key="..\:/Users/pedrox10/AppData/Local/Android/Sdk/platforms/android-34/data/res/layout/simple_spinner_dropdown_item.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/pedrox10/AppData/Local/Android/Sdk/platforms/android-34/data/res/layout/simple_spinner_item.xml" value="0.3145833333333333" />
       </map>
     </option>
   </component>

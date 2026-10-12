@@ -44,7 +44,7 @@
                             android:layout_weight="1"
                             android:textSize="@dimen/text_size_medium_title"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/material_on_surface_variant"
                             android:layout_marginTop="@dimen/margin_small"
                             />
                         <LinearLayout
@@ -89,14 +89,14 @@
                             android:text="Fecha: "
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/material_on_surface_variant" />
                         <TextView
                             android:id="@+id/tvDetallePedidoFecha"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/material_on_surface_variant"
                             tools:text="21/06/2025" />
                     </LinearLayout>
 
@@ -111,37 +111,68 @@
                             android:text="Cliente: "
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/material_on_surface_variant" />
                         <TextView
                             android:id="@+id/tvCliente"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/material_on_surface_variant"
                             tools:text="Andrea Gómez" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_weight="1"
                         android:layout_marginTop="@dimen/margin_small">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Total: "
-                            android:textStyle="bold"
-                            android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/colorOnSurfaceVariant"/>
-                        <TextView
-                            android:id="@+id/tvTotalPedido"
-                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total: "
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_size_body_bold"
+                                android:textColor="@color/colorOnSurfaceVariant"/>
+                            <TextView
+                                android:id="@+id/tvTotalPedido"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_body_bold"
+                                android:textColor="@color/material_on_surface_variant"
+                                tools:text="580 Bs." />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/text_size_body_bold"
-                            android:textColor="@color/black"
-                            tools:text="580 Bs." />
+                            android:orientation="horizontal"
+                            android:layout_weight="0.55"
+                            android:layout_marginTop="@dimen/margin_extra_small">
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cuotas de: "
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_size_body_bold"
+                                android:textColor="@color/colorOnSurfaceVariant"/>
+                            <TextView
+                                android:id="@+id/tvCuotasDePedido"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_body_bold"
+                                android:textColor="@color/material_on_surface_variant"
+                                tools:text="50 Bs." />
+                        </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -171,28 +202,26 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_weight="1"
-                            android:layout_marginTop="@dimen/margin_extra_small">
+                            android:layout_weight="1">
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_weight="1"
-                            android:layout_marginTop="@dimen/margin_extra_small">
+                            android:layout_weight="1">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Saldo: "
                                 android:textStyle="bold"
                                 android:textSize="@dimen/text_size_body_bold"
-                                android:textColor="@android:color/holo_red_dark" />
+                                android:textColor="@color/colorDanger" />
                             <TextView
                                 android:id="@+id/tvSaldoPedido"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/text_size_body_bold"
-                                android:textColor="@android:color/holo_red_dark"
+                                android:textColor="@color/colorDanger"
                                 tools:text="430 Bs." />
                         </LinearLayout>
                     </LinearLayout>
@@ -210,7 +239,7 @@
                             android:layout_weight="1"
                             android:textSize="@dimen/text_size_medium_title"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/material_on_surface_variant"
                             android:layout_marginTop="@dimen/margin_default"
                             />
                         <com.google.android.material.button.MaterialButton
@@ -268,7 +297,7 @@
                             android:layout_weight="1"
                             android:textSize="@dimen/text_size_medium_title"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/material_on_surface_variant"
                             android:layout_marginTop="@dimen/margin_default"
                             />
                         <com.google.android.material.button.MaterialButton
@@ -293,14 +322,27 @@
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:listitem="@layout/item_pago"
                         android:layout_marginTop="@dimen/margin_small" />
+
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_enviar_comprobante"
+                        android:id="@+id/btnReporteResumido"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Enviar Comprobante"
+                        android:text="Enviar reporte"
                         app:icon="@drawable/ic_android"
+                        app:iconTint="@color/teal_700"
+                        app:strokeColor="@color/teal_700"
+                        android:textColor="@color/teal_700"
+                        app:backgroundTint="@android:color/transparent"
                         style="@style/Widget.Material3.Button.IconButton.Outlined"
                         android:layout_marginTop="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReporteDetallado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enviar reporte completo"
+                        app:icon="@drawable/ic_android"
+                        style="@style/Widget.Material3.Button.IconButton.Outlined" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

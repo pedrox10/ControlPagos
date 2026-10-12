@@ -4,11 +4,33 @@
         android:icon="@drawable/account_balance_wallet_24px"
         android:title="Reporte de pagos" />
     <item
+        android:id="@+id/action_productos_vendidos"
+        android:icon="@drawable/account_balance_wallet_24px"
+        android:title="Productos vendidos" />
+    <item
+        android:id="@+id/action_cartera_viva"
+        android:icon="@drawable/account_balance_wallet_24px"
+        android:title="Cartera viva" />
+    <item
+        android:id="@+id/action_gestionar_sectores"
+        android:icon="@drawable/groups_24px"
+        android:title="Administrar sectores" />
+    <item
         android:id="@+id/action_gestionar_usuarios"
         android:icon="@drawable/groups_24px"
         android:title="Administrar usuarios" />
     <item
+        android:id="@+id/action_clientes_archivados"
+        android:icon="@drawable/groups_24px"
+        android:title="Clientes archivados" />
+    <item
         android:id="@+id/action_gestionar_productos"
         android:icon="@drawable/box_24px"
         android:title="Administrar productos" />
+    <item
+        android:id="@+id/action_cerrar_sesion"
+        android:layout_marginTop="@dimen/margin_small"
+        android:icon="@drawable/account_circle_24px"
+        android:color="@color/colorDanger"
+        android:title="Cerrar sesión" />
 </menu>

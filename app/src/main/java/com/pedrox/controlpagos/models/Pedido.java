@@ -8,6 +8,7 @@ public class Pedido implements Serializable { // Implementar Serializable para p
 
     private int id;
     private String fecha;
+    private double cuotasDe;
     private Cliente cliente;                  // relación con Cliente
     private List<ProductoPedido> productos;   // relación intermedia
     private List<Pago> pagos;
@@ -18,9 +19,10 @@ public class Pedido implements Serializable { // Implementar Serializable para p
         this.pagos = new ArrayList<>();
     }
 
-    public Pedido(int id, String fecha, Cliente cliente) {
+    public Pedido(int id, String fecha, double cuotasDe, Cliente cliente) {
         this.id = id;
         this.fecha = fecha;
+        this.cuotasDe = cuotasDe;
         this.cliente = cliente;
         this.productos = new ArrayList<>(); // Inicializar listas para evitar NullPointerException
         this.pagos = new ArrayList<>();
@@ -48,6 +50,14 @@ public class Pedido implements Serializable { // Implementar Serializable para p
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public double getCuotasDe() {
+        return cuotasDe;
+    }
+
+    public void setCuotasDe(double cuotasDe) {
+        this.cuotasDe = cuotasDe;
     }
 
     public double getTotal() {
@@ -132,6 +142,7 @@ public class Pedido implements Serializable { // Implementar Serializable para p
     public String toString() {
         return "Pedido{" +
                 "id=" + id +
+                ", coutasDe=" + cuotasDe +
                 ", fechaEntrega=" + fecha +
                 ", numProductos=" + (productos != null ? productos.size() : 0) +
                 ", numPagos=" + (pagos != null ? pagos.size() : 0) +

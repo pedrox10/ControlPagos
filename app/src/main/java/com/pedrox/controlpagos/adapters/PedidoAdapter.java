@@ -54,6 +54,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
 
         holder.tvPedidoFecha.setText(pedido.getFecha());
         holder.tvTotal.setText(pedido.getTotal() + "");
+        holder.tvCuotasDe.setText(pedido.getCuotasDe() + "");
         holder.tvPagado.setText(pedido.getPagado() + "");
         holder.tvSaldo.setText(pedido.getSaldo() + "");
 
@@ -94,6 +95,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
         MaterialCardView cardPedido; // El ID de la tarjeta principal
         TextView tvPedidoFecha;
         TextView tvTotal;
+        TextView tvCuotasDe;
         TextView tvPagado;
         TextView tvSaldo;
         TextView tvPedidoProductos; // Para mostrar la lista de productos
@@ -103,6 +105,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
             cardPedido = itemView.findViewById(R.id.cardPedido);
             tvPedidoFecha = itemView.findViewById(R.id.tvPedidoFecha);
             tvTotal = itemView.findViewById(R.id.tvTotal);
+            tvCuotasDe = itemView.findViewById(R.id.tvCuotasDe);
             tvPagado = itemView.findViewById(R.id.tvPagado);
             tvSaldo = itemView.findViewById(R.id.tvSaldo);
             tvPedidoProductos = itemView.findViewById(R.id.tvPedidoProductos);

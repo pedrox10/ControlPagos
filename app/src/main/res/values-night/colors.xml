@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fondos de cards y superficies dark -->
+    <color name="colorBackgroundCard">#1E1B2E</color>
+    <color name="colorBackgroundPaper">#13111C</color>
+
+    <!-- Resaltado pago del día dark -->
+    <color name="colorResaltado">#F0B060</color>
+    <color name="fondoResaltado">#2C2010</color>
+
+    <!-- Superficies Material dark -->
+    <color name="colorSurface">#1C1B1F</color>
+    <color name="colorOnSurface">#E6E1E5</color>
+    <color name="colorSurfaceVariant">#49454F</color>
+    <color name="colorOnSurfaceVariant">#CAC4D0</color>
+    <color name="colorOutline">#938F99</color>
+    <color name="material_on_surface_variant">#CAC4D0</color>
+    <color name="material_on_surface_stroke">#49454F</color>
+
+    <!-- Semánticos dark -->
+    <color name="colorSuccess">#1D9E75</color>
+    <color name="colorDanger">#F09595</color>
+    <color name="colorInfo">#3987CD</color>
+
+    <!-- Teal para pagos dark -->
+    <color name="teal_200">#0D2E1F</color>
+    <color name="teal_700">#1D9E75</color>
+
+    <!-- Toggle grupos dark -->
+    <color name="colorToggle">#2D2B3A</color>
+
+    <!-- Header tablas dark -->
+    <color name="colorHeaderTabla">#2D2F5E</color>
+    <color name="colorHeaderTablaTexto">#9BA3E8</color>
+</resources>

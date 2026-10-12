@@ -18,9 +18,11 @@ import androidx.annotation.NonNull;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.jimmyworks.easyhttp.EasyHttp;
+import com.jimmyworks.easyhttp.builder.BodyRequestBuilder;
 import com.jimmyworks.easyhttp.exception.HttpException;
 import com.jimmyworks.easyhttp.listener.JsonResponseListener;
 import com.pedrox.controlpagos.Constants;
+import com.pedrox.controlpagos.HttpClient;
 import com.pedrox.controlpagos.R;
 import com.pedrox.controlpagos.models.Pago;
 import com.pedrox.controlpagos.models.Producto;
@@ -107,8 +109,9 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
                             }
                             holder.btnEditarUsuario.setEnabled(false);
                             holder.btnEditarUsuario.setAlpha(0.5f);
-                            EasyHttp.post(v.getContext(), Constants.API_BASE_URL + "usuario/edit")
-                                    .stringBody("application/json; charset=utf-8", obj.toString())
+                            BodyRequestBuilder rb = EasyHttp.post(v.getContext(), Constants.API_BASE_URL + "usuario/edit");
+                            rb.getOkHttpClientBuilder().addInterceptor(HttpClient.interceptor(v.getContext()));
+                            rb.stringBody("application/json; charset=utf-8", obj.toString())
                                     .build()
                                     .getJsonAsObject(UsuarioRespuesta.class, new JsonResponseListener<UsuarioRespuesta>() {
                                         @Override
@@ -152,8 +155,9 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        EasyHttp.post(view.getContext(), Constants.API_BASE_URL + "usuario/delete")
-                                .stringBody("application/json; charset=utf-8", obj.toString())
+                        BodyRequestBuilder rb = EasyHttp.post(view.getContext(), Constants.API_BASE_URL + "usuario/delete");
+                        rb.getOkHttpClientBuilder().addInterceptor(HttpClient.interceptor(view.getContext()));
+                        rb.stringBody("application/json; charset=utf-8", obj.toString())
                                 .build()
                                 .getJsonAsObject(UsuarioRespuesta.class, new JsonResponseListener<UsuarioRespuesta>() {
                                     @Override

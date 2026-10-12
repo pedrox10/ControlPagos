@@ -5,10 +5,10 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#ECFAF9</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Superficies Material -->
     <color name="colorSurface">#FFFBFE</color>
     <color name="colorOnSurface">#1C1B1F</color>
     <color name="colorSurfaceVariant">#E7E0EC</color>
@@ -20,9 +20,28 @@
     <color name="material_on_surface_variant">#49454F</color>
     <color name="material_on_surface_stroke">#E6E0E9</color>
     <color name="cardview_light_background">#FFFFFF</color>
+
+    <!-- Colores semánticos light -->
     <color name="colorInfo">#195D93</color>
+    <color name="colorSuccess">#0F6E56</color>
+    <color name="colorDanger">#C62828</color>
+
+    <!-- Resaltado pago del día -->
     <color name="colorResaltado">#6A4001</color>
     <color name="fondoResaltado">#FDEFDB</color>
+
+    <!-- Fondos de la app -->
     <color name="colorBackgroundPaper">#F5F1E8</color>
-    <color name="colorBackgroundCard">#FBF8EC</color>
+    <color name="colorBackgroundCard">#FAF9F6</color>
+
+    <!-- Toggle grupos -->
+    <color name="colorToggle">#EADEE9</color>
+
+    <!-- Teal para pagos (light) -->
+    <color name="teal_200">#E1F5EE</color>
+    <color name="teal_700">#0F6E56</color>
+
+    <!-- Header tablas -->
+    <color name="colorHeaderTabla">#C6CEFD</color>
+    <color name="colorHeaderTablaTexto">#26215C</color>
 </resources>
